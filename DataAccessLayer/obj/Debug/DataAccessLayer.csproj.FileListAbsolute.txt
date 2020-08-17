@@ -1,0 +1,5 @@
+C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

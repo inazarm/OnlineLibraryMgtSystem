@@ -77,3 +77,8 @@ C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\obj\De
 C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\obj\Debug\OnlineLibraryMgtSystem.csproj.CopyComplete
 C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\obj\Debug\OnlineLibraryMgtSystem.dll
 C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\obj\Debug\OnlineLibraryMgtSystem.pdb
+C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\bin\DataAccessLayer.dll
+C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\bin\EntityFramework.dll
+C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\bin\DataAccessLayer.pdb
+C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\bin\DataAccessLayer.dll.config
+C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\bin\EntityFramework.xml

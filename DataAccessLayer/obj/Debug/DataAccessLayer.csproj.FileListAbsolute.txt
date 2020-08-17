@@ -3,3 +3,10 @@ C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\DataAccessLayer\bin\Debug\Dat
 C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
 C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\DataAccessLayer\obj\Debug\DataAccessLayer.dll
 C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\DataAccessLayer\bin\Debug\DataAccessLayer.dll.config
+C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\DataAccessLayer\bin\Debug\EntityFramework.dll
+C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\DataAccessLayer\bin\Debug\EntityFramework.xml
+C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\DataAccessLayer\obj\Debug\DataAccessLayer.csprojAssemblyReference.cache
+C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CopyComplete

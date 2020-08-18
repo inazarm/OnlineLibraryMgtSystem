@@ -82,3 +82,5 @@ C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\bin\En
 C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\bin\DataAccessLayer.pdb
 C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\bin\DataAccessLayer.dll.config
 C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\bin\EntityFramework.xml
+C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\bin\EntityFramework.SqlServer.dll
+C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\bin\EntityFramework.SqlServer.xml

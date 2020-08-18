@@ -11,18 +11,28 @@ namespace DataAccessLayer
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class IssueBookTable
     {
         public int IssueBookID { get; set; }
         public int UserID { get; set; }
+        [Required(ErrorMessage = "Please Select Book!")]
         public int BookID { get; set; }
+        [Required(ErrorMessage = "Please Select Employee!")]
         public int EmployeeID { get; set; }
+        [Required(ErrorMessage = "Please Enter No.Of Copies Issue!")]
         public int IssueCopies { get; set; }
+        [Required(ErrorMessage = "Please Set IssueDate!")]
+        [DataType(DataType.Date)]
         public System.DateTime IssueDate { get; set; }
+        [Required(ErrorMessage = "Please Set Return Date!")]
+        [DataType(DataType.Date)]
         public System.DateTime ReturnDate { get; set; }
+
         public bool Status { get; set; }
         public string Description { get; set; }
+
         public bool ReserveNoOfCopies { get; set; }
     
         public virtual BookTable BookTable { get; set; }

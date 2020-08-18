@@ -11,7 +11,8 @@ namespace DataAccessLayer
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class DepartmentTable
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,6 +23,7 @@ namespace DataAccessLayer
         }
     
         public int DepartmentID { get; set; }
+        [Required(ErrorMessage = "Please Enter Department Name!")]
         public string Name { get; set; }
         public int UserID { get; set; }
     

@@ -11,7 +11,8 @@ namespace DataAccessLayer
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class EmployeeTable
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,16 +23,27 @@ namespace DataAccessLayer
             this.IssueBookTables = new HashSet<IssueBookTable>();
             this.UserTables = new HashSet<UserTable>();
         }
-    
+
         public int EmployeeID { get; set; }
         public int UserID { get; set; }
+        [Required(ErrorMessage = "Please Enter Full Name")]
         public string FullName { get; set; }
+
+        [Required(ErrorMessage = "Please Enter Father's Name!")]
         public string FatherName { get; set; }
+
+        [Required(ErrorMessage = "Please Enter Contact Number!")]
         public string ContactNo { get; set; }
+        [Required(ErrorMessage = "Please Enter Email-Address!")]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
+        [Required(ErrorMessage = "Please Enter Address!")]
         public string Address { get; set; }
+        [Required(ErrorMessage = "Please Select Designation!")]
         public int DesignationID { get; set; }
+        [Required(ErrorMessage = "Please Select Department!")]
         public int DepartmentID { get; set; }
+        [Display(Name ="Status")]
         public bool IsActive { get; set; }
         public string Description { get; set; }
     

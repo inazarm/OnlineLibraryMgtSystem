@@ -11,7 +11,8 @@ namespace DataAccessLayer
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class BookTypeTable
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,6 +22,8 @@ namespace DataAccessLayer
         }
     
         public int BookTypeID { get; set; }
+
+        [Required(ErrorMessage = "Please Enter Book Type!")]
         public string Name { get; set; }
         public int UserID { get; set; }
     

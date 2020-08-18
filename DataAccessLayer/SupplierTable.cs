@@ -11,7 +11,8 @@ namespace DataAccessLayer
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class SupplierTable
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,9 +22,15 @@ namespace DataAccessLayer
         }
     
         public int SupplierID { get; set; }
+        [Required(ErrorMessage = "Please Seelect Suplier Name!")]
         public string SupplierName { get; set; }
         public int UserID { get; set; }
+
+        [Required(ErrorMessage = "Please Enter Contact No.!")]
         public string ContactNo { get; set; }
+
+        [Required(ErrorMessage = "Please Enter Email!")]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
         public string Description { get; set; }
     

@@ -11,7 +11,8 @@ namespace DataAccessLayer
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class DesignationTable
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,8 +22,10 @@ namespace DataAccessLayer
         }
     
         public int DesignationID { get; set; }
+        [Required(ErrorMessage = "Please Enter Designation!")]
         public string Name { get; set; }
         public int UserID { get; set; }
+        [Required(ErrorMessage = "Please Enter Designation Scale!")]
         public string Scale { get; set; }
     
         public virtual UserTable UserTable { get; set; }

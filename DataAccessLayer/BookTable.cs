@@ -11,7 +11,8 @@ namespace DataAccessLayer
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class BookTable
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,19 +24,33 @@ namespace DataAccessLayer
             this.PurchaseDetailTables = new HashSet<PurchaseDetailTable>();
             this.PurTemDetailsTables = new HashSet<PurTemDetailsTable>();
         }
-    
+
         public int BookID { get; set; }
         public int UserID { get; set; }
+
+        [Required(ErrorMessage = "Please Select Department!")]
         public int DepartmentID { get; set; }
+        [Required(ErrorMessage = "Please Select Book Type!")]
         public int BookTypeID { get; set; }
+        [Required(ErrorMessage = "Please Enter Book Title!")]
         public string BookTitle { get; set; }
+        [Required(ErrorMessage = "Please Enter Short Description!")]
         public string ShortDescription { get; set; }
+        [Required(ErrorMessage = "Please Enter Author Name!")]
         public string Author { get; set; }
+
+        [Required(ErrorMessage = "Please Enter Book Name!")]
         public string BookName { get; set; }
+        [Required(ErrorMessage = "Please Enter Book Edition!")]
         public double Edition { get; set; }
+        [Required(ErrorMessage = "Please Enter Total Copies!")]
         public int TotalCopies { get; set; }
         public System.DateTime RegDate { get; set; }
+
+        [Required(ErrorMessage = "Please Enter Book Price!")]
+        [DataType(DataType.Currency)]
         public double Price { get; set; }
+
         public string Description { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

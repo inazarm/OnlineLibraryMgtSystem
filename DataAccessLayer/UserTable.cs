@@ -11,7 +11,9 @@ namespace DataAccessLayer
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+
     public partial class UserTable
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -28,10 +30,18 @@ namespace DataAccessLayer
         }
     
         public int UserID { get; set; }
+        [Required(ErrorMessage = "Please Select user Type!")]
         public int UserTypeID { get; set; }
+
+        [Required(ErrorMessage = "Please Enter user Name!")]
         public string UserName { get; set; }
+
+        [Required(ErrorMessage = "Please Enter Password!")]
         public string Password { get; set; }
+        [Required(ErrorMessage = "Please Select Employee!")]
         public int EmployeeID { get; set; }
+
+        [Display(Name ="Status")]
         public bool IsActive { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -15,7 +15,9 @@ namespace DataAccessLayer
     public partial class PurchaseDetailTable
     {
         public int PurchaseDetailID { get; set; }
+        
         public int BookID { get; set; }
+        
         public int PurchaseID { get; set; }
         public int Qty { get; set; }
         public double UnitPrice { get; set; }

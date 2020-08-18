@@ -11,7 +11,8 @@ namespace DataAccessLayer
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class PurchaseTable
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,9 +22,16 @@ namespace DataAccessLayer
         }
     
         public int PurchaseID { get; set; }
+
+        [Required(ErrorMessage = "Please set Purchase Date!")]
+        [DataType(DataType.Date)]
         public System.DateTime PurchaseDate { get; set; }
         public int UserID { get; set; }
+        [Required(ErrorMessage = "Please Enter Purchase Unit Price!")]
+        [DataType(DataType.Currency)]
         public double PurchaseAmount { get; set; }
+
+        [Required(ErrorMessage = "Please Select Supplier Name!")]
         public int SupplierID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -1970,6 +1970,7 @@
     <Content Include="Views\DepartmentTables\Details.cshtml" />
     <Content Include="Views\DepartmentTables\Edit.cshtml" />
     <Content Include="Views\DepartmentTables\Index.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

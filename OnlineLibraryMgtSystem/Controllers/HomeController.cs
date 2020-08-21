@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace OnlineLibraryMgtSystem.Controllers
 {
@@ -84,6 +85,20 @@ namespace OnlineLibraryMgtSystem.Controllers
                 ViewBag.message = "some unexpected issue occure please try again!!";
             }
             return View("login");
+        }
+
+        public ActionResult Logout()
+        {
+            Session["uID"] = string.Empty;
+            Session["uTypeID"] = string.Empty;
+            Session["uName"] = string.Empty;
+            Session["uPassword"] = string.Empty;
+            Session["employeeID"] = string.Empty;
+            FormsAuthentication.SignOut();
+            Session.Clear();
+            Session.RemoveAll();
+            Session.Abandon();
+            return RedirectToAction("Logout");
         }
         public ActionResult Index()
         {

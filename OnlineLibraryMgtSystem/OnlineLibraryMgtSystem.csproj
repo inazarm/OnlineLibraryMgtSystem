@@ -126,6 +126,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DepartmentTablesController.cs" />
+    <Compile Include="Controllers\DesignationTablesController.cs" />
+    <Compile Include="Controllers\EmployeeTablesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserTablesController.cs" />
     <Compile Include="Controllers\UserTypeTablesController.cs" />
@@ -1952,6 +1955,21 @@
     <Content Include="Views\UserTables\Details.cshtml" />
     <Content Include="Views\UserTables\Edit.cshtml" />
     <Content Include="Views\UserTables\Index.cshtml" />
+    <Content Include="Views\EmployeeTables\Create.cshtml" />
+    <Content Include="Views\EmployeeTables\Delete.cshtml" />
+    <Content Include="Views\EmployeeTables\Details.cshtml" />
+    <Content Include="Views\EmployeeTables\Edit.cshtml" />
+    <Content Include="Views\EmployeeTables\Index.cshtml" />
+    <Content Include="Views\DesignationTables\Create.cshtml" />
+    <Content Include="Views\DesignationTables\Delete.cshtml" />
+    <Content Include="Views\DesignationTables\Details.cshtml" />
+    <Content Include="Views\DesignationTables\Edit.cshtml" />
+    <Content Include="Views\DesignationTables\Index.cshtml" />
+    <Content Include="Views\DepartmentTables\Create.cshtml" />
+    <Content Include="Views\DepartmentTables\Delete.cshtml" />
+    <Content Include="Views\DepartmentTables\Details.cshtml" />
+    <Content Include="Views\DepartmentTables\Edit.cshtml" />
+    <Content Include="Views\DepartmentTables\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

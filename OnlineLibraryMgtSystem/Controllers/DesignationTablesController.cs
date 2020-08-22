@@ -17,13 +17,16 @@ namespace OnlineLibraryMgtSystem.Controllers
         // GET: DesignationTables
         public ActionResult Index()
         {
-            var designationTables = db.DesignationTables.Include(d => d.UserTable);
-            return View(designationTables.ToList());
+            if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
+                return RedirectToAction("Login", "Home");
+            return View(db.DesignationTables.ToList());
         }
 
         // GET: DesignationTables/Details/5
         public ActionResult Details(int? id)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
+                return RedirectToAction("Login", "Home");
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -39,17 +42,18 @@ namespace OnlineLibraryMgtSystem.Controllers
         // GET: DesignationTables/Create
         public ActionResult Create()
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
+                return RedirectToAction("Login", "Home");
             ViewBag.UserID = new SelectList(db.UserTables, "UserID", "UserName");
             return View();
         }
 
-        // POST: DesignationTables/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "DesignationID,Name,UserID,Scale")] DesignationTable designationTable)
+        public ActionResult Create(DesignationTable designationTable)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
+                return RedirectToAction("Login", "Home");
             if (ModelState.IsValid)
             {
                 db.DesignationTables.Add(designationTable);
@@ -64,6 +68,8 @@ namespace OnlineLibraryMgtSystem.Controllers
         // GET: DesignationTables/Edit/5
         public ActionResult Edit(int? id)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
+                return RedirectToAction("Login", "Home");
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -77,13 +83,13 @@ namespace OnlineLibraryMgtSystem.Controllers
             return View(designationTable);
         }
 
-        // POST: DesignationTables/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "DesignationID,Name,UserID,Scale")] DesignationTable designationTable)
+        public ActionResult Edit( DesignationTable designationTable)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
+                return RedirectToAction("Login", "Home");
             if (ModelState.IsValid)
             {
                 db.Entry(designationTable).State = EntityState.Modified;
@@ -97,6 +103,8 @@ namespace OnlineLibraryMgtSystem.Controllers
         // GET: DesignationTables/Delete/5
         public ActionResult Delete(int? id)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
+                return RedirectToAction("Login", "Home");
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

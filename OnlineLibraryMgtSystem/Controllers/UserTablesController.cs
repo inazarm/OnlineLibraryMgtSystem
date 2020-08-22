@@ -15,9 +15,7 @@ namespace OnlineLibraryMgtSystem.Controllers
         public ActionResult Index()
         {
             if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
-            {
                 return RedirectToAction("Login","Home");
-            }
             return View(db.UserTypeTables.ToList());
         }
 

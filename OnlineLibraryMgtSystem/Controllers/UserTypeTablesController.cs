@@ -17,12 +17,16 @@ namespace OnlineLibraryMgtSystem.Controllers
         // GET: UserTypeTables
         public ActionResult Index()
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
+                return RedirectToAction("Login", "Home");
             return View(db.UserTypeTables.ToList());
         }
 
         // GET: UserTypeTables/Details/5
         public ActionResult Details(int? id)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
+                return RedirectToAction("Login", "Home");
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -46,6 +50,8 @@ namespace OnlineLibraryMgtSystem.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(UserTypeTable userTypeTable)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
+                return RedirectToAction("Login", "Home");
             if (ModelState.IsValid)
             {
                 db.UserTypeTables.Add(userTypeTable);
@@ -59,6 +65,8 @@ namespace OnlineLibraryMgtSystem.Controllers
         // GET: UserTypeTables/Edit/5
         public ActionResult Edit(int? id)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
+                return RedirectToAction("Login", "Home");
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -71,13 +79,12 @@ namespace OnlineLibraryMgtSystem.Controllers
             return View(userTypeTable);
         }
 
-        // POST: UserTypeTables/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "UserTypeID,UserType")] UserTypeTable userTypeTable)
+        public ActionResult Edit(UserTypeTable userTypeTable)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
+                return RedirectToAction("Login", "Home");
             if (ModelState.IsValid)
             {
                 db.Entry(userTypeTable).State = EntityState.Modified;
@@ -90,6 +97,8 @@ namespace OnlineLibraryMgtSystem.Controllers
         // GET: UserTypeTables/Delete/5
         public ActionResult Delete(int? id)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
+                return RedirectToAction("Login", "Home");
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

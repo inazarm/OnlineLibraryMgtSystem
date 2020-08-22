@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using DataAccessLayer;
 
@@ -13,17 +10,20 @@ namespace OnlineLibraryMgtSystem.Controllers
     public class EmployeeTablesController : Controller
     {
         private OnlineLibraryMgtSystemDbEntities db = new OnlineLibraryMgtSystemDbEntities();
-
         // GET: EmployeeTables
         public ActionResult Index()
         {
-            var employeeTables = db.EmployeeTables.Include(e => e.DepartmentTable).Include(e => e.DesignationTable);
-            return View(employeeTables.ToList());
+            if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
+                return RedirectToAction("Login", "Home");
+            return View(db.EmployeeTables.ToList());
         }
 
         // GET: EmployeeTables/Details/5
         public ActionResult Details(int? id)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
+                return RedirectToAction("Login", "Home");
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -44,13 +44,13 @@ namespace OnlineLibraryMgtSystem.Controllers
             return View();
         }
 
-        // POST: EmployeeTables/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EmployeeID,UserID,FullName,FatherName,ContactNo,Email,Address,DesignationID,DepartmentID,IsActive,Description")] EmployeeTable employeeTable)
+        public ActionResult Create(EmployeeTable employeeTable)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
+                return RedirectToAction("Login", "Home");
             if (ModelState.IsValid)
             {
                 db.EmployeeTables.Add(employeeTable);
@@ -66,6 +66,8 @@ namespace OnlineLibraryMgtSystem.Controllers
         // GET: EmployeeTables/Edit/5
         public ActionResult Edit(int? id)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
+                return RedirectToAction("Login", "Home");
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -80,12 +82,9 @@ namespace OnlineLibraryMgtSystem.Controllers
             return View(employeeTable);
         }
 
-        // POST: EmployeeTables/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EmployeeID,UserID,FullName,FatherName,ContactNo,Email,Address,DesignationID,DepartmentID,IsActive,Description")] EmployeeTable employeeTable)
+        public ActionResult Edit(EmployeeTable employeeTable)
         {
             if (ModelState.IsValid)
             {
@@ -101,6 +100,9 @@ namespace OnlineLibraryMgtSystem.Controllers
         // GET: EmployeeTables/Delete/5
         public ActionResult Delete(int? id)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
+                return RedirectToAction("Login", "Home");
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

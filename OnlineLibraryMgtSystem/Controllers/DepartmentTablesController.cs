@@ -10,6 +10,7 @@ using DataAccessLayer;
 
 namespace OnlineLibraryMgtSystem.Controllers
 {
+    [Authorize]
     public class DepartmentTablesController : Controller
     {
         private OnlineLibraryMgtSystemDbEntities db = new OnlineLibraryMgtSystemDbEntities();
@@ -17,13 +18,18 @@ namespace OnlineLibraryMgtSystem.Controllers
         // GET: DepartmentTables
         public ActionResult Index()
         {
-            var departmentTables = db.DepartmentTables.Include(d => d.UserTable);
-            return View(departmentTables.ToList());
+            if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
+                return RedirectToAction("Login", "Home");
+         
+            return View(db.DepartmentTables.ToList());
         }
 
         // GET: DepartmentTables/Details/5
         public ActionResult Details(int? id)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
+                return RedirectToAction("Login", "Home");
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -43,13 +49,13 @@ namespace OnlineLibraryMgtSystem.Controllers
             return View();
         }
 
-        // POST: DepartmentTables/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "DepartmentID,Name,UserID")] DepartmentTable departmentTable)
+        public ActionResult Create( DepartmentTable departmentTable)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
+                return RedirectToAction("Login", "Home");
+
             if (ModelState.IsValid)
             {
                 db.DepartmentTables.Add(departmentTable);
@@ -64,6 +70,9 @@ namespace OnlineLibraryMgtSystem.Controllers
         // GET: DepartmentTables/Edit/5
         public ActionResult Edit(int? id)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
+                return RedirectToAction("Login", "Home");
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -77,13 +86,13 @@ namespace OnlineLibraryMgtSystem.Controllers
             return View(departmentTable);
         }
 
-        // POST: DepartmentTables/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "DepartmentID,Name,UserID")] DepartmentTable departmentTable)
+        public ActionResult Edit(DepartmentTable departmentTable)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
+                return RedirectToAction("Login", "Home");
+
             if (ModelState.IsValid)
             {
                 db.Entry(departmentTable).State = EntityState.Modified;
@@ -97,6 +106,9 @@ namespace OnlineLibraryMgtSystem.Controllers
         // GET: DepartmentTables/Delete/5
         public ActionResult Delete(int? id)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
+                return RedirectToAction("Login", "Home");
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

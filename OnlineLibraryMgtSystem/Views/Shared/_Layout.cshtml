@@ -110,8 +110,23 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">User Configuration</h6>
                         <a class="collapse-item" href="@Url.Action("Index","UserTypeTables")">User Type</a>
-                        <a class="collapse-item" href="#">User Registration</a>
-                        <a class="collapse-item" href="#">All Users</a>
+                        <a class="collapse-item" href="@Url.Action("Index","UserTables")">User Registration</a>
+                    </div>
+                </div>
+
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBC" aria-expanded="true" aria-controls="collapseBC">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Basic Configuration</span>
+                </a>
+                <div id="collapseBC" class="collapse" aria-labelledby="headingBC" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">DESIGNATION</h6>
+                        <a class="collapse-item" href="@Url.Action("Create","DesignationTables")">New Designation</a>
+                        <a class="collapse-item" href="@Url.Action("Index","DesignationTables")">All Designations</a>
+                        <h6 class="collapse-header">DEPARTMENT</h6>
+                        <div class="collapse-divider"></div>
+                        <a class="collapse-item" href="@Url.Action("Create","DepartmentTables")">New Department</a>
+                        <a class="collapse-item" href="@Url.Action("Index","DepartmentTables")">All Departments</a>
                     </div>
                 </div>
             </li>
@@ -160,21 +175,7 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBC" aria-expanded="true" aria-controls="collapseBC">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Basic Configuration</span>
-                </a>
-                <div id="collapseBC" class="collapse" aria-labelledby="headingBC" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">DESIGNATION</h6>
-                        <a class="collapse-item" href="@Url.Action("Create","DesignationTables")">New Designation</a>
-                        <a class="collapse-item" href="@Url.Action("Index","DesignationTables")">All Designations</a>
-                        <h6 class="collapse-header">DEPARTMENT</h6>
-                        <div class="collapse-divider"></div>
-                        <a class="collapse-item" href="@Url.Action("Create","DepartmentTables")">New Department</a>
-                        <a class="collapse-item" href="@Url.Action("Index","DepartmentTables")">All Departments</a>
-                    </div>
-                </div>
+                
             </li>
 
             <!-- Nav Item - Tables -->

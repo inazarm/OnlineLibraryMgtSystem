@@ -55,7 +55,8 @@ namespace OnlineLibraryMgtSystem.Controllers
         {
             if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
                 return RedirectToAction("Login", "Home");
-
+            int userID = Convert.ToInt32(Session["uID"]);
+            departmentTable.UserID = userID;
             if (ModelState.IsValid)
             {
                 db.DepartmentTables.Add(departmentTable);
@@ -93,6 +94,8 @@ namespace OnlineLibraryMgtSystem.Controllers
             if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
                 return RedirectToAction("Login", "Home");
 
+            int userID = Convert.ToInt32(Session["uID"]);
+            departmentTable.UserID = userID;
             if (ModelState.IsValid)
             {
                 db.Entry(departmentTable).State = EntityState.Modified;

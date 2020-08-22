@@ -52,8 +52,11 @@ namespace OnlineLibraryMgtSystem.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(DesignationTable designationTable)
         {
+
             if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
                 return RedirectToAction("Login", "Home");
+            int userID = Convert.ToInt32(Session["uID"]);
+            designationTable.UserID = userID;
             if (ModelState.IsValid)
             {
                 db.DesignationTables.Add(designationTable);
@@ -90,6 +93,8 @@ namespace OnlineLibraryMgtSystem.Controllers
         {
             if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
                 return RedirectToAction("Login", "Home");
+            int userID = Convert.ToInt32(Session["uID"]);
+            designationTable.UserID = userID;
             if (ModelState.IsValid)
             {
                 db.Entry(designationTable).State = EntityState.Modified;

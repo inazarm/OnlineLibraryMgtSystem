@@ -51,6 +51,9 @@ namespace OnlineLibraryMgtSystem.Controllers
         {
             if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
                 return RedirectToAction("Login", "Home");
+
+            int userID =Convert.ToInt32(Session["uID"]);
+            employeeTable.UserID = userID;
             if (ModelState.IsValid)
             {
                 db.EmployeeTables.Add(employeeTable);
@@ -86,6 +89,8 @@ namespace OnlineLibraryMgtSystem.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(EmployeeTable employeeTable)
         {
+            int userID = Convert.ToInt32(Session["uID"]);
+            employeeTable.UserID = userID;
             if (ModelState.IsValid)
             {
                 db.Entry(employeeTable).State = EntityState.Modified;

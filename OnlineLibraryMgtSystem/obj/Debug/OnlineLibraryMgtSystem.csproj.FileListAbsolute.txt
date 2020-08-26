@@ -51,6 +51,9 @@ C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\bin\ro
 C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\bin\roslyn\VBCSCompiler.exe
 C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\bin\Antlr3.Runtime.dll
+C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\bin\DataAccessLayer.dll
+C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\bin\EntityFramework.dll
+C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\bin\EntityFramework.SqlServer.dll
 C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\bin\Newtonsoft.Json.dll
@@ -62,6 +65,10 @@ C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\bin\Sy
 C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\bin\System.Web.WebPages.dll
 C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\bin\System.Web.WebPages.Razor.dll
 C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\bin\WebGrease.dll
+C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\bin\DataAccessLayer.pdb
+C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\bin\DataAccessLayer.dll.config
+C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\bin\EntityFramework.xml
+C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\bin\EntityFramework.SqlServer.xml
 C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\bin\System.Web.Helpers.xml
 C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\bin\System.Web.Mvc.xml
 C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\bin\System.Web.Optimization.xml
@@ -77,10 +84,3 @@ C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\obj\De
 C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\obj\Debug\OnlineLibraryMgtSystem.csproj.CopyComplete
 C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\obj\Debug\OnlineLibraryMgtSystem.dll
 C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\obj\Debug\OnlineLibraryMgtSystem.pdb
-C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\bin\DataAccessLayer.dll
-C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\bin\EntityFramework.dll
-C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\bin\DataAccessLayer.pdb
-C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\bin\DataAccessLayer.dll.config
-C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\bin\EntityFramework.xml
-C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\bin\EntityFramework.SqlServer.dll
-C:\Users\inaza\source\repos\OnlineLibraryMgtSystem\OnlineLibraryMgtSystem\bin\EntityFramework.SqlServer.xml

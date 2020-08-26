@@ -1,0 +1,120 @@
+﻿@model DataAccessLayer.BookTable
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>BookTable</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BookTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BookTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShortDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShortDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Author)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Author)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BookName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BookName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Edition)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Edition)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalCopies)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalCopies)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BookTypeTable.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BookTypeTable.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DepartmentTable.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DepartmentTable.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserTable.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserTable.UserName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -126,6 +126,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BookTablesController.cs" />
     <Compile Include="Controllers\BookTypeTablesController.cs" />
     <Compile Include="Controllers\DepartmentTablesController.cs" />
     <Compile Include="Controllers\DesignationTablesController.cs" />
@@ -1989,6 +1990,11 @@
     <Content Include="Views\PurchaseTables\Details.cshtml" />
     <Content Include="Views\PurchaseTables\Edit.cshtml" />
     <Content Include="Views\PurchaseTables\Index.cshtml" />
+    <Content Include="Views\BookTables\Create.cshtml" />
+    <Content Include="Views\BookTables\Delete.cshtml" />
+    <Content Include="Views\BookTables\Details.cshtml" />
+    <Content Include="Views\BookTables\Edit.cshtml" />
+    <Content Include="Views\BookTables\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

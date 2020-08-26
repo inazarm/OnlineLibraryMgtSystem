@@ -30,27 +30,44 @@ namespace DataAccessLayer
 
         [Required(ErrorMessage = "Please Select Department!")]
         public int DepartmentID { get; set; }
+
+
         [Required(ErrorMessage = "Please Select Book Type!")]
         public int BookTypeID { get; set; }
+
+
         [Required(ErrorMessage = "Please Enter Book Title!")]
         public string BookTitle { get; set; }
+
+
         [Required(ErrorMessage = "Please Enter Short Description!")]
+        [DataType(DataType.MultilineText)]
         public string ShortDescription { get; set; }
+
+
         [Required(ErrorMessage = "Please Enter Author Name!")]
         public string Author { get; set; }
 
+
         [Required(ErrorMessage = "Please Enter Book Name!")]
         public string BookName { get; set; }
+
+
         [Required(ErrorMessage = "Please Enter Book Edition!")]
         public double Edition { get; set; }
+
+
         [Required(ErrorMessage = "Please Enter Total Copies!")]
         public int TotalCopies { get; set; }
+
+        [DataType(DataType.Date)]
         public System.DateTime RegDate { get; set; }
 
         [Required(ErrorMessage = "Please Enter Book Price!")]
         [DataType(DataType.Currency)]
         public double Price { get; set; }
 
+        [DataType(DataType.MultilineText)]
         public string Description { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

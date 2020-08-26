@@ -111,8 +111,7 @@
                         <h6 class="collapse-header">User Configuration</h6>
                         <a class="collapse-item" href="@Url.Action("Index","UserTypeTables")">User Type</a>
                         <a class="collapse-item" href="@Url.Action("Index","UserTables")">User Registration</a>
-                        <h6 class="collapse-header">Book Configuration</h6>
-                        <a class="collapse-item" href="@Url.Action("Index","BookTypeTables")">Book Type</a>
+                        
                     </div>
                 </div>
 
@@ -151,17 +150,17 @@
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBooks" aria-expanded="true" aria-controls="collapseBooks">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>Utilities</span>
+                    <span>Books</span>
                 </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                <div id="collapseBooks" class="collapse" aria-labelledby="headingBooks" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" href="~/Content/AdminPenal/utilities-color.html">Colors</a>
-                        <a class="collapse-item" href="~/Content/AdminPenal/utilities-border.html">Borders</a>
-                        <a class="collapse-item" href="~/Content/AdminPenal/utilities-animation.html">Animations</a>
-                        <a class="collapse-item" href="~/Content/AdminPenal/utilities-other.html">Other</a>
+                        <h6 class="collapse-header">Books Registration</h6>
+                        <a class="collapse-item" href="@Url.Action("Index","BookTypeTables")">New Book Type</a>
+                        <a class="collapse-item" href="@Url.Action("Create","BookTables")">New Book</a>
+                        <a class="collapse-item" href="@Url.Action("Index","BookTypeTables")">Book Types</a>
+                        <a class="collapse-item" href="@Url.Action("Index","BookTables")">All Books</a>
                     </div>
                 </div>
             </li>

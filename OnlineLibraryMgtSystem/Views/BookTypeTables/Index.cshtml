@@ -1,21 +1,19 @@
 ﻿@model IEnumerable<DataAccessLayer.BookTypeTable>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Book Categories";
 }
 
-<h2>Index</h2>
-
 <p>
-    @Html.ActionLink("Create New", "Create",null, new { @class= "genric-btn success" })
+    @Html.ActionLink("Add Book Category", "Create",null, new { @class= "btn btn-success" })
 </p>
-<table class="table">
+<table class="table table-hover">
     <tr>
         <th>
             Book Type
         </th>
         <th>
-            User Name
+            User
         </th>
         <th>
             Action

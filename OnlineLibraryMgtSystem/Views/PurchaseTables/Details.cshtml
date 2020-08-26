@@ -1,0 +1,50 @@
+﻿@model DataAccessLayer.PurchaseTable
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PurchaseTable</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PurchaseDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PurchaseDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PurchaseAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PurchaseAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SupplierTable.SupplierName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SupplierTable.SupplierName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserTable.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserTable.UserName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PurchaseID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

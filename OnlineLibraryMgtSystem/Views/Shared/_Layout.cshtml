@@ -111,6 +111,8 @@
                         <h6 class="collapse-header">User Configuration</h6>
                         <a class="collapse-item" href="@Url.Action("Index","UserTypeTables")">User Type</a>
                         <a class="collapse-item" href="@Url.Action("Index","UserTables")">User Registration</a>
+                        <h6 class="collapse-header">Book Configuration</h6>
+                        <a class="collapse-item" href="@Url.Action("Index","BookTypeTables")">Book Type</a>
                     </div>
                 </div>
 
@@ -123,6 +125,22 @@
                         <h6 class="collapse-header">DESIGNATION</h6>
                         <a class="collapse-item" href="@Url.Action("Create","DesignationTables")">New Designation</a>
                         <a class="collapse-item" href="@Url.Action("Index","DesignationTables")">All Designations</a>
+                        <h6 class="collapse-header">DEPARTMENT</h6>
+                        <div class="collapse-divider"></div>
+                        <a class="collapse-item" href="@Url.Action("Create","DepartmentTables")">New Department</a>
+                        <a class="collapse-item" href="@Url.Action("Index","DepartmentTables")">All Departments</a>
+                    </div>
+                </div>
+
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePC" aria-expanded="true" aria-controls="collapsePC">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Purchasing</span>
+                </a>
+                <div id="collapsePC" class="collapse" aria-labelledby="headingPC" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">DESIGNATION</h6>
+                        <a class="collapse-item" href="@Url.Action("Index","SupplierTables")">All Suppliers</a>
+                        <a class="collapse-item" href="@Url.Action("Create","SupplierTables")">New Purchase's</a>
                         <h6 class="collapse-header">DEPARTMENT</h6>
                         <div class="collapse-divider"></div>
                         <a class="collapse-item" href="@Url.Action("Create","DepartmentTables")">New Department</a>

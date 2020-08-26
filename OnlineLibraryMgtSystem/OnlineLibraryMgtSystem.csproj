@@ -126,10 +126,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BookTypeTablesController.cs" />
     <Compile Include="Controllers\DepartmentTablesController.cs" />
     <Compile Include="Controllers\DesignationTablesController.cs" />
     <Compile Include="Controllers\EmployeeTablesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PurchaseTablesController.cs" />
+    <Compile Include="Controllers\SupplierTablesController.cs" />
     <Compile Include="Controllers\UserTablesController.cs" />
     <Compile Include="Controllers\UserTypeTablesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -1971,6 +1974,21 @@
     <Content Include="Views\DepartmentTables\Edit.cshtml" />
     <Content Include="Views\DepartmentTables\Index.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\BookTypeTables\Create.cshtml" />
+    <Content Include="Views\BookTypeTables\Delete.cshtml" />
+    <Content Include="Views\BookTypeTables\Details.cshtml" />
+    <Content Include="Views\BookTypeTables\Edit.cshtml" />
+    <Content Include="Views\BookTypeTables\Index.cshtml" />
+    <Content Include="Views\SupplierTables\Create.cshtml" />
+    <Content Include="Views\SupplierTables\Delete.cshtml" />
+    <Content Include="Views\SupplierTables\Details.cshtml" />
+    <Content Include="Views\SupplierTables\Edit.cshtml" />
+    <Content Include="Views\SupplierTables\Index.cshtml" />
+    <Content Include="Views\PurchaseTables\Create.cshtml" />
+    <Content Include="Views\PurchaseTables\Delete.cshtml" />
+    <Content Include="Views\PurchaseTables\Details.cshtml" />
+    <Content Include="Views\PurchaseTables\Edit.cshtml" />
+    <Content Include="Views\PurchaseTables\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

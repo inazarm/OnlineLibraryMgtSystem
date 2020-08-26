@@ -17,12 +17,16 @@ namespace OnlineLibraryMgtSystem.Controllers
         // GET: BookTypeTables
         public ActionResult Index()
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
+                return RedirectToAction("Login", "Home");
             return View(db.BookTypeTables.ToList());
         }
 
         // GET: BookTypeTables/Details/5
         public ActionResult Details(int? id)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
+                return RedirectToAction("Login", "Home");
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -38,16 +42,21 @@ namespace OnlineLibraryMgtSystem.Controllers
         // GET: BookTypeTables/Create
         public ActionResult Create()
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
+                return RedirectToAction("Login", "Home");
             return View();
         }
 
-        // POST: BookTypeTables/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "BookTypeID,Name,UserID")] BookTypeTable bookTypeTable)
+        public ActionResult Create(BookTypeTable bookTypeTable)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
+                return RedirectToAction("Login", "Home");
+            int userID = Convert.ToInt32(Session["uID"]);
+            bookTypeTable.UserID = userID;
             if (ModelState.IsValid)
             {
                 db.BookTypeTables.Add(bookTypeTable);
@@ -61,6 +70,8 @@ namespace OnlineLibraryMgtSystem.Controllers
         // GET: BookTypeTables/Edit/5
         public ActionResult Edit(int? id)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
+                return RedirectToAction("Login", "Home");
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -73,13 +84,14 @@ namespace OnlineLibraryMgtSystem.Controllers
             return View(bookTypeTable);
         }
 
-        // POST: BookTypeTables/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "BookTypeID,Name,UserID")] BookTypeTable bookTypeTable)
+        public ActionResult Edit(BookTypeTable bookTypeTable)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
+                return RedirectToAction("Login", "Home");
+            int userID = Convert.ToInt32(Session["uID"]);
+            bookTypeTable.UserID = userID;
             if (ModelState.IsValid)
             {
                 db.Entry(bookTypeTable).State = EntityState.Modified;
@@ -87,32 +99,6 @@ namespace OnlineLibraryMgtSystem.Controllers
                 return RedirectToAction("Index");
             }
             return View(bookTypeTable);
-        }
-
-        // GET: BookTypeTables/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            BookTypeTable bookTypeTable = db.BookTypeTables.Find(id);
-            if (bookTypeTable == null)
-            {
-                return HttpNotFound();
-            }
-            return View(bookTypeTable);
-        }
-
-        // POST: BookTypeTables/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            BookTypeTable bookTypeTable = db.BookTypeTables.Find(id);
-            db.BookTypeTables.Remove(bookTypeTable);
-            db.SaveChanges();
-            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)

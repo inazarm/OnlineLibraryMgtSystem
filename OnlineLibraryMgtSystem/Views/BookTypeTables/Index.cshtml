@@ -7,17 +7,19 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create",null, new { @class= "genric-btn success" })
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            Book Type
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.UserID)
+            User Name
         </th>
-        <th></th>
+        <th>
+            Action
+        </th>
     </tr>
 
 @foreach (var item in Model) {
@@ -30,8 +32,7 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.BookTypeID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.BookTypeID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.BookTypeID })
+            
         </td>
     </tr>
 }

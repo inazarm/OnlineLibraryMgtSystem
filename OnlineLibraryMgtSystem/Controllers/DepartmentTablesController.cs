@@ -10,7 +10,6 @@ using DataAccessLayer;
 
 namespace OnlineLibraryMgtSystem.Controllers
 {
-    [Authorize]
     public class DepartmentTablesController : Controller
     {
         private OnlineLibraryMgtSystemDbEntities db = new OnlineLibraryMgtSystemDbEntities();

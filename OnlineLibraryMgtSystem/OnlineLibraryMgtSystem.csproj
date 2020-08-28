@@ -132,6 +132,7 @@
     <Compile Include="Controllers\DesignationTablesController.cs" />
     <Compile Include="Controllers\EmployeeTablesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PurchaseController.cs" />
     <Compile Include="Controllers\PurchaseTablesController.cs" />
     <Compile Include="Controllers\SupplierTablesController.cs" />
     <Compile Include="Controllers\UserTablesController.cs" />
@@ -1999,6 +2000,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Purchase\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

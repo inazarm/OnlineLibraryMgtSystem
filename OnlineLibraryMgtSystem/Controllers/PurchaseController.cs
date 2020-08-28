@@ -28,15 +28,15 @@ namespace OnlineLibraryMgtSystem.Controllers
         }
 
         // GET: Purchase/PurchaseCart
-        public ActionResult AddItem(int BID,int Qty,float Price)
+        public ActionResult AddItem(int BID, int Qty, float Price)
         {
             if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
                 return RedirectToAction("Login", "Home");
 
             var isAvailable = db.PurTemDetailsTables.Any(b => b.BookID == BID);
-            if (isAvailable!=true)
+            if (isAvailable != true)
             {
-                if (BID>0 && Qty>0 && Price>0)
+                if (BID > 0 && Qty > 0 && Price > 0)
                 {
                     var newItem = new PurTemDetailsTable()
                     {
@@ -56,14 +56,14 @@ namespace OnlineLibraryMgtSystem.Controllers
             }
             return RedirectToAction("NewPurchase");
         }
-         
+
         public ActionResult DeleteConfirm(int? id)
         {
             if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
                 return RedirectToAction("Login", "Home");
 
             var book = db.PurTemDetailsTables.Find(id);
-            if (book!=null)
+            if (book != null)
             {
                 db.Entry(book).State = System.Data.Entity.EntityState.Deleted;
                 db.SaveChanges();
@@ -93,5 +93,34 @@ namespace OnlineLibraryMgtSystem.Controllers
             }
             return Json(new { data = list }, JsonRequestBehavior.AllowGet);
         }
+
+
+        public ActionResult CancelPurchase()
+        {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
+                return RedirectToAction("Login", "Home");
+
+            var list = db.PurTemDetailsTables.ToList();
+            bool cancelstatus = false;
+            foreach (var item in list)
+            {
+                db.Entry(item).State = System.Data.Entity.EntityState.Deleted;
+                int noofrecoreds = db.SaveChanges();
+                if (cancelstatus==false)
+                {
+                    if (noofrecoreds > 0)
+                        cancelstatus = true;
+                    
+                }
+            }
+            if (cancelstatus == true)
+            {
+                ViewBag.Message = "Purchase is Canceled";
+                return RedirectToAction("NewPurchase");
+            }
+            ViewBag.Message = "Some Unexpected issue is occur";
+            return RedirectToAction("NewPurchase");
+        }
+
     }
 }

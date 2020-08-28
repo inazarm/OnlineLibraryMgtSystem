@@ -92,10 +92,13 @@
                                 @(string.Format("{0:0.000}",Math.Truncate(ViewBag.TotalAmount*10)/10))PKR
                             </td>
                             <td></td>
-
                         </tr>
                     </tfoot>
                 </table>
+                <div style="margin-top:20px;float:right">
+                    @Html.ActionLink("Next", "SelectSupplier", null, new { @class = "btn btn-success", style = "padding:20px;" })
+                    @Html.ActionLink("Cancel", "CancelPurchase", null, new { @class = "btn btn-danger", style = "padding:20px;" })
+                </div>
             </div>
         </div>
     </div>

@@ -1999,6 +1999,7 @@
     <Content Include="Views\BookTables\Edit.cshtml" />
     <Content Include="Views\BookTables\Index.cshtml" />
     <Content Include="Views\Purchase\NewPurchase.cshtml" />
+    <Content Include="Views\Purchase\SelectSupplier.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

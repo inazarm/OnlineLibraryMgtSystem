@@ -1,0 +1,74 @@
+﻿@model IEnumerable<DataAccessLayer.SupplierTable>
+
+@{
+    ViewBag.Title = "Finilize Purchasing";
+}
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+@using (Html.BeginForm("PurchaseConfirm","Purchase",FormMethod.Post))
+{
+    <div class="card">
+        <div class="card card-flat">
+            <div class="card-header">
+                <input type="submit" style="float:right;" value="Finilize Purchase" class="btn btn-success" />
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover" id="dataTable">
+                        <thead style="background-color:lightgray">
+                            <tr>
+                                <th>
+                                    Supplier
+                                </th>
+                                <th>
+                                    Contact Number
+                                </th>
+                                <th>
+                                    Supplier Email
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem=>item.SupplierName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ContactNo)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Email)
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" name="@item.SupplierID" class="chb" />
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<script type="text/javascript">
+    $(document).read(function () {
+        //$("#search").on("keyup", function () {
+        //    var value = $(this).val().toLowerCase();
+        //    $("#supplierlist tr").filter(function () {
+        //        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+
+        //    });
+        //});
+
+        $(".chb").change(function (event) {
+            $(".chb").prop('checked', false);
+            $(this).prop('checked', true);
+        });
+
+    });
+</script>

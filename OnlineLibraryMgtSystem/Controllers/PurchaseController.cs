@@ -106,11 +106,11 @@ namespace OnlineLibraryMgtSystem.Controllers
             {
                 db.Entry(item).State = System.Data.Entity.EntityState.Deleted;
                 int noofrecoreds = db.SaveChanges();
-                if (cancelstatus==false)
+                if (cancelstatus == false)
                 {
                     if (noofrecoreds > 0)
                         cancelstatus = true;
-                    
+
                 }
             }
             if (cancelstatus == true)
@@ -122,5 +122,20 @@ namespace OnlineLibraryMgtSystem.Controllers
             return RedirectToAction("NewPurchase");
         }
 
+        public ActionResult SelectSupplier()
+        {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
+                return RedirectToAction("Login", "Home");
+
+            var purchasedetails = db.PurTemDetailsTables.ToList();
+            if (purchasedetails.Count==0)
+            {
+                ViewBag.Message = "Purchase cart empty";
+                return View("NewPurchase");
+            }
+            var supplier = db.SupplierTables.ToList();
+            return View(supplier);
+
+        }
     }
 }

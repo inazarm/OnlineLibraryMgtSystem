@@ -1997,10 +1997,10 @@
     <Content Include="Views\BookTables\Details.cshtml" />
     <Content Include="Views\BookTables\Edit.cshtml" />
     <Content Include="Views\BookTables\Index.cshtml" />
+    <Content Include="Views\Purchase\NewPurchase.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Purchase\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

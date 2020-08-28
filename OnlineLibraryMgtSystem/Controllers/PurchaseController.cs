@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccessLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,13 @@ namespace OnlineLibraryMgtSystem.Controllers
 {
     public class PurchaseController : Controller
     {
+        private OnlineLibraryMgtSystemDbEntities db = new OnlineLibraryMgtSystemDbEntities();
         // GET: Purchase
-        public ActionResult Index()
+        public ActionResult NewPurchase()
         {
-            return View();
+            if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
+                return RedirectToAction("Login", "Home");
+            return View(db.PurTemDetailsTables.ToList());
         }
 
         // GET: Purchase/Details/5

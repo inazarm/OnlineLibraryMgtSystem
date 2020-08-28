@@ -1,0 +1,53 @@
+﻿@model IEnumerable<DataAccessLayer.PurTemDetailsTable>
+
+@{
+    ViewBag.Title = "New Purchase";
+}
+
+
+<hr />
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Purchase Items List</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>
+                                Book
+                            </th>
+                            <th>
+                                Purchase
+                            </th>
+                            <th>
+                                Unit Price
+                            </th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.BookTable.BookName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Qty)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.UnitPrice)
+                                </td>
+
+                                <td>
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.PurTemID }, new { @class = "btn btn-danger" })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>

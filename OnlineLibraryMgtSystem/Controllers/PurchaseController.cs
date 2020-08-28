@@ -18,76 +18,53 @@ namespace OnlineLibraryMgtSystem.Controllers
             return View(db.PurTemDetailsTables.ToList());
         }
 
-        // GET: Purchase/Details/5
-        public ActionResult Details(int id)
+        // GET: Purchase/PurchaseCart
+        public ActionResult AddItem(int BID,int Qty,float Price)
         {
-            return View();
-        }
+            if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
+                return RedirectToAction("Login", "Home");
 
-        // GET: Purchase/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Purchase/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
+            var isAvailable = db.PurTemDetailsTables.Any(b => b.BookID == BID);
+            if (isAvailable!=true)
             {
-                // TODO: Add insert logic here
+                if (BID>0 && Qty>0 && Price>0)
+                {
+                    var newItem = new PurTemDetailsTable()
+                    {
+                        BookID = BID,
+                        Qty = Qty,
+                        UnitPrice = Price
+                    };
 
-                return RedirectToAction("Index");
+                    db.PurTemDetailsTables.Add(newItem);
+                    db.SaveChanges();
+                    ViewBag.Message = "Book Added Successfully";
+                }
             }
-            catch
+            else
             {
-                return View();
+                ViewBag.Message = "Already Exist! Please Check";
             }
+            return RedirectToAction("NewPurchase");
         }
-
-        // GET: Purchase/Edit/5
-        public ActionResult Edit(int id)
+         
+        public ActionResult DeleteConfirm(int? id)
         {
-            return View();
+            if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
+                return RedirectToAction("Login", "Home");
+
+            var book = db.PurTemDetailsTables.Find(id);
+            if (book!=null)
+            {
+                db.Entry(book).State = System.Data.Entity.EntityState.Deleted;
+                db.SaveChanges();
+                ViewBag.Message = "Deleted Successfully";
+                return RedirectToAction("NewPurchase");
+            }
+            ViewBag.Message = "Some unexpected issue is occurse";
+            return View("NewPurchase");
         }
 
-        // POST: Purchase/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Purchase/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Purchase/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+       
     }
 }

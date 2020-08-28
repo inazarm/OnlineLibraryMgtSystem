@@ -85,4 +85,21 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({
+            url: '@Url.Action("GetProduct", "Purchase")',
+            type: 'GET',
+            data: '{}',
+            success: function (response) {
+                for (var i = 0; i < response.data.length; i++) {
+                    $('#BID').append("<option value=" + response.data[i].ProductID + ">" + response.data[i].Name + "</option>");
+                }
+            },
+            error: function () {
 
+            }
+
+        });
+    });
+    </script>

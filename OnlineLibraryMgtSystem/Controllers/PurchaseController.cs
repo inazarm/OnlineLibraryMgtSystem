@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer;
+using OnlineLibraryMgtSystem.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,15 @@ namespace OnlineLibraryMgtSystem.Controllers
         {
             if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
                 return RedirectToAction("Login", "Home");
-            return View(db.PurTemDetailsTables.ToList());
+
+            double totalamount = 0;
+            var temppur = db.PurTemDetailsTables.ToList();
+            foreach (var item in temppur)
+            {
+                totalamount += (item.Qty * item.UnitPrice);
+            }
+            ViewBag.TotalAmount = totalamount;
+            return View(temppur);
         }
 
         // GET: Purchase/PurchaseCart
@@ -65,6 +74,24 @@ namespace OnlineLibraryMgtSystem.Controllers
             return View("NewPurchase");
         }
 
-       
+        [HttpGet]
+        public ActionResult GetBooks()
+        {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
+                return RedirectToAction("Login", "Home");
+
+
+            List<BookMV> list = new List<BookMV>();
+            var booklist = db.BookTables.ToList();
+            foreach (var item in booklist)
+            {
+                list.Add(new BookMV
+                {
+                    BookName = item.BookName,
+                    BookID = item.BookID
+                });
+            }
+            return Json(new { data = list }, JsonRequestBehavior.AllowGet);
+        }
     }
 }

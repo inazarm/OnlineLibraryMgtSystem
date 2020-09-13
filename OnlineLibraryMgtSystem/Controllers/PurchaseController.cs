@@ -122,6 +122,78 @@ namespace OnlineLibraryMgtSystem.Controllers
             return RedirectToAction("NewPurchase");
         }
 
+        [HttpPost]
+        public ActionResult PurchaseConfirm(FormCollection collection)
+        {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
+                return RedirectToAction("Login", "Home");
+
+            int userid =Convert.ToInt32(Convert.ToString(Session["uID"]));
+            int supplierid = 0;
+            string[] keys = collection.AllKeys;
+            foreach (var name in keys)
+            {
+                if (name.Contains("name"))
+                {
+                    string idname = name;
+                    string[] valueids = idname.Split(' ');
+                    supplierid = Convert.ToInt32(valueids[1]);
+                }
+               supplierid = Convert.ToInt32(keys[1]);
+            }
+
+            var puchasedetails = db.PurchaseDetailTables.ToList();
+            double totalamount = 0;
+            foreach (var item in puchasedetails)
+            {
+                totalamount = totalamount + (item.Qty * item.UnitPrice);
+            }
+            if (totalamount==0)
+            {
+                ViewBag.Message = "Purchase Cart Empty!";
+                return View("NewPurchase");
+            }
+
+            var purchaseheader = new PurchaseTable();
+            purchaseheader.SupplierID = supplierid;
+            purchaseheader.PurchaseDate = DateTime.Now;
+            purchaseheader.PurchaseAmount = totalamount;
+            purchaseheader.UserID = userid;
+            db.PurchaseTables.Add(purchaseheader);
+            db.SaveChanges();
+
+            foreach (var item in puchasedetails)
+            {
+                var purdetails = new PurchaseDetailTable()
+                {
+                    BookID = item.BookID,
+                    PurchaseID = purchaseheader.PurchaseID,
+                    Qty = item.Qty,
+                    UnitPrice = item.UnitPrice
+                };
+                db.PurchaseDetailTables.Add(purdetails);
+                db.SaveChanges();
+
+                var updatebookstock = db.BookTables.Find(item.BookID);
+                updatebookstock.TotalCopies = updatebookstock.TotalCopies + item.Qty;
+                updatebookstock.Price = item.UnitPrice;
+                db.Entry(updatebookstock).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+            }
+
+            ViewBag.Message = "Purchase confirm successfully!";
+            return RedirectToAction("AllPurchase");
+
+        }
+
+        public ActionResult AllPurchase()
+        {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
+                return RedirectToAction("Login", "Home");
+
+            return View(db.PurchaseTables.ToList());
+        }
+
         public ActionResult SelectSupplier()
         {
             if (string.IsNullOrEmpty(Convert.ToString(Session["uID"])))
@@ -137,5 +209,9 @@ namespace OnlineLibraryMgtSystem.Controllers
             return View(supplier);
 
         }
+
+
+       
+
     }
 }

@@ -2000,6 +2000,7 @@
     <Content Include="Views\BookTables\Index.cshtml" />
     <Content Include="Views\Purchase\NewPurchase.cshtml" />
     <Content Include="Views\Purchase\SelectSupplier.cshtml" />
+    <Content Include="Views\Purchase\AllPurchase.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
